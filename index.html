@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>digitalcommerce.lab - Instant Download</title>
+
+<!-- FACEBOOK PIXEL - 1633908845076966
+Data source
+ -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'YOUR_PIXEL_ID'); // <--- 1633908845076966
+Data source
+
+fbq('track', 'PageView');
+fbq('track', 'ViewContent');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
+/></noscript>
+
+<style>
+*{box-sizing:border-box} body{font-family:system-ui, Arial; margin:0; background:#f5f6fa; color:#222}
+.container{max-width:480px; margin:auto; background:white; min-height:100vh}
+.header{padding:15px; border-bottom:1px solid #eee; display:flex; justify-content:space-between; align-items:center}
+.product{padding:20px} .product img{width:100%; border-radius:15px}
+.price{font-size:28px; font-weight:bold} .old-price{text-decoration:line-through; color:grey; font-size:18px}
+.btn{width:100%; background:#000; color:#fff; padding:18px; border:none; border-radius:12px; font-size:19px; font-weight:700; margin-top:15px; cursor:pointer}
+.btn-pay{background:#1570EF}
+.badge{display:flex; gap:10px; margin:15px 0; font-size:13px}
+.badge span{background:#eef2ff; padding:6px 10px; border-radius:20px}
+.footer{padding:20px; background:#111; color:#ccc; font-size:12px; line-height:1.6}
+.footer a{color:#ccc; margin-right:10px; text-decoration:underline}
+.trust{padding:15px; background:#f0fdf4; border:1px solid #bbf7d0; border-radius:10px; margin-top:15px; font-size:14px}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<b>DigitalStore.</b>
+<span style="font-size:12px">Support: help@yourstore.com</span>
+</div>
+
+<div class="product">
+<img src="https://via.placeholder.com/600x400?text=Your+Product+Image">
+<h2>Complete Digital Product Bundle - Instant Download</h2>
+<p style="color:grey">⭐⭐⭐⭐⭐ 4.8/5 (1,243 Reviews)</p>
+<div><span class="price">₹599</span> <span class="old-price">₹1999</span> <span style="color:green; font-weight:bold">80% OFF</span></div>
+
+<div class="badge">
+<span>✓ Instant Access</span><span>✓ Secure Payment</span><span>✓ Lifetime Access</span>
+</div>
+
+<p>This is a digital product. You will get instant access on Thank You page after successful payment.</p>
+
+<div class="trust">
+✓ 100% Secure Payment via UPI / Card / Netbanking<br>
+✓ File will be delivered instantly after payment<br>
+✓ 7 Days Money Back Guarantee
+</div>
+
+<!-- PAYMENT BUTTON - Yaha apna Payment Link dalna -->
+<a id="payBtn" href="YOUR_PAYMENT_LINK_HERE" style="text-decoration:none">
+<button class="btn btn-pay" onclick="fbq('track','InitiateCheckout')">Pay Now & Get Instant Access - ₹199</button>
+</a>
+<button class="btn" style="background:white; color:black; border:1px solid #ddd; margin-top:10px">Cash on Delivery Not Applicable (Digital)</button>
+
+<p style="font-size:12px; color:grey; text-align:center; margin-top:10px">You will be redirected to secure payment gateway</p>
+
+<h3 style="margin-top:30px">What You Will Get:</h3>
+<ul style="text-align:left">
+<li>High Quality Digital File (PDF / ZIP / Video)</li>
+<li>Instant Download Link on Thank You Page</li>
+<li>Email Delivery Also</li>
+<li>Lifetime Access & Updates</li>
+</ul>
+</div>
+
+<div class="footer">
+<p><b>DigitalStore Pvt Ltd</b><br>Address: Jhanjharpur, Bihar, 847404, India<br>Email: help@yourstore.com | Phone: +91-9XXXXXXXXX</p>
+<p>
+<a href="/privacy.html">Privacy Policy</a>
+<a href="/terms.html">Terms & Conditions</a>
+<a href="/refund.html">Refund Policy</a>
+<a href="/contact.html">Contact Us</a>
+<a href="/shipping.html">Shipping Policy (Digital Delivery)</a>
+</p>
+<p>© 2026 DigitalStore. All Rights Reserved. This is a digital product, no physical shipment.</p>
+</div>
+</div>
+
+<script>
+// Payment ke baad thankyou page pe bhejne ke liye - Testing ke liye
+// Jab real payment gateway lagega, to gateway khud redirect karega thankyou.html pe
+document.getElementById('payBtn').addEventListener('click', function(){
+  fbq('track','InitiateCheckout');
+  // Agar abhi payment link nahi hai, to demo ke liye thankyou page pe jayega
+  if(this.href.includes('YOUR_PAYMENT_LINK')){
+    event.preventDefault();
+    alert('Abhi payment link nahi laga hai. Testing ke liye Thank You page khul raha hai.');
+    window.location.href = 'thankyou.html';
+  }
+});
+</script>
+</body>
+</html>
