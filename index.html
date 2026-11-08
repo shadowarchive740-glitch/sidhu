@@ -1,11 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>P&L Tracker - Google Sheet E-commerce P&L Tracker ₹599</title>
+<title>Digital Commerce.lab | E-commerce P&L Tracker</title>
+<meta name="description" content="Track your E-commerce business profit, loss, ads spend, expenses and sales with one simple Google Sheets dashboard.">
+
 <script src="https://cdn.tailwindcss.com"></script>
-<!-- Meta Pixel Code -->
+
+<!-- META PIXEL - ORIGINAL ID PRESERVED -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -18,47 +22,507 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '1633908845076966');
 fbq('track', 'PageView');
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1633908845076966&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1633908845076966&ev=PageView&noscript=1"/>
+</noscript>
+<!-- END META PIXEL -->
+
 <style>
-.pie{width:90px;height:90px;border-radius:50%;background:conic-gradient(#ef4444 0% 35%, #3b82f6 35% 50%, #f59e0b 50% 65%, #22c55e 65% 100%);margin:0 auto}
+* { scroll-behavior:smooth; }
+body {
+  background:#080F1E;
+  color:#ffffff;
+  font-family:Arial, sans-serif;
+}
+.blue { color:#1685FF; }
+.glow {
+  box-shadow:0 0 35px rgba(22,133,255,.16);
+}
+.gradient {
+  background:linear-gradient(135deg,#1685FF,#0754C7);
+}
+.card {
+  background:linear-gradient(145deg,#111C32,#0B1425);
+  border:1px solid rgba(148,163,184,.15);
+  border-radius:18px;
+}
+.grid-bg {
+  background-image:
+  linear-gradient(rgba(22,133,255,.045) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(22,133,255,.045) 1px,transparent 1px);
+  background-size:35px 35px;
+}
+.btn {
+  transition:.25s ease;
+}
+.btn:hover {
+  transform:translateY(-2px);
+  box-shadow:0 8px 25px rgba(22,133,255,.3);
+}
+.pie {
+  width:105px;
+  height:105px;
+  border-radius:50%;
+  background:conic-gradient(
+    #1685FF 0% 35%,
+    #22C55E 35% 60%,
+    #F59E0B 60% 80%,
+    #8B5CF6 80% 100%
+  );
+  margin:auto;
+}
+section { scroll-margin-top:85px; }
 </style>
 </head>
-<body class="bg-white text-gray-900 font-sans">
+
+<body>
 
 <!-- HEADER -->
-<header class="sticky top-0 bg-white shadow-sm z-50">
-<div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-<div class="flex items-center gap-2">
-<div class="leading-none"><p class="text-[26px] font-black leading-[0.9]">P&L</p><p class="text-[11px] font-bold tracking-wide">TRACKER</p></div>
-<div class="w-10 h-10 border-2 border-green-600 rounded-lg flex items-center justify-center text-xl">📈</div>
+<header class="sticky top-0 z-50 bg-[#080F1E]/95 backdrop-blur-xl border-b border-white/10">
+<div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 gradient rounded-xl flex items-center justify-center font-black text-xl">D</div>
+<div>
+<p class="font-extrabold text-base leading-tight">Digital Commerce<span class="blue">.lab</span></p>
+<p class="text-[10px] tracking-[3px] text-gray-400">SMART TOOLS FOR SMARTER BUSINESS</p>
 </div>
-<nav class="hidden md:flex gap-4 text-[14px] font-medium">
-<a href="#features">Features</a><span>|</span><a href="#included">What's Included</a><span>|</span><a href="#how">How it Works</a><span>|</span><a href="#reviews">Reviews</a><span>|</span><a href="#faq">FAQ</a>
+</div>
+
+<nav class="hidden lg:flex gap-6 text-sm text-gray-300">
+<a href="#features" class="hover:text-blue-400">Features</a>
+<a href="#included" class="hover:text-blue-400">What's Included</a>
+<a href="#how" class="hover:text-blue-400">How it Works</a>
+<a href="#reviews" class="hover:text-blue-400">Why This Tracker</a>
+<a href="#faq" class="hover:text-blue-400">FAQ</a>
 </nav>
-<a href="https://www.supercreators.in/p/httpsdrivegooglecomfiled1zozcw3nm9wzme57-fqeakq3bobca95viewu" onclick="fbq('track','InitiateCheckout',{value:599,currency:'INR'});" class="bg-green-700 text-white text-[13px] md:text-sm font-bold px-4 py-2 rounded-md">Buy Now 599</a>
+
+<a href="https://www.supercreators.in/p/httpsdrivegooglecomfiled1zozcw3nm9wzme57-fqeakq3bobca95viewu"
+onclick="fbq('track','InitiateCheckout',{value:599,currency:'INR'});"
+class="gradient btn text-white text-xs md:text-sm font-bold px-4 py-3 rounded-lg">
+BUY NOW ₹599
+</a>
 </div>
 </header>
 
+
 <!-- HERO -->
-<section class="max-w-6xl mx-auto px-4 py-6 md:py-10 grid lg:grid-cols-2 gap-8 items-center">
+<section class="grid-bg relative overflow-hidden">
+<div class="max-w-6xl mx-auto px-4 py-16 md:py-24 grid lg:grid-cols-2 gap-12 items-center">
+
 <div>
-<div class="inline-block bg-green-50 text-green-800 text-xs font-bold px-3 py-1.5 rounded-full">🔥 LIMITED TIME OFFER — 70% OFF</div>
-<h1 class="text-[32px] md:text-[44px] font-extrabold leading-[1.1] mt-4">Google Sheet E-commerce<br>P&L Tracker</h1>
-<p class="text-gray-600 mt-4 text-[15px] md:text-base">The only Google Sheet you need to track Profit & Loss, Ads Spend, COGS, Expenses & Profit for your E-commerce business — all in one dashboard.</p>
-<div class="flex items-center gap-3 mt-5"><span class="text-2xl line-through text-gray-500 font-bold">₹1999</span><span class="text-4xl md:text-5xl font-extrabold text-green-700">₹599</span><span class="bg-green-700 text-white text-xs font-bold px-3 py-1.5 rounded-md">Save ₹1400</span></div>
-<p class="text-xs md:text-sm mt-3 font-medium">One-time payment • Instant Download • No Monthly Subscription</p>
-<div class="flex flex-col sm:flex-row gap-3 mt-5">
-<a href="https://www.supercreators.in/p/httpsdrivegooglecomfiled1zozcw3nm9wzme57-fqeakq3bobca95viewu" onclick="fbq('track','InitiateCheckout',{value:599,currency:'INR'});" class="bg-green-700 text-white font-bold text-center px-5 py-3 rounded-md">🛒 Buy Now for ₹599 🔒 Secure Checkout</a>
-<a href="https://docs.google.com/spreadsheets/d/1QiLxA4fIZ5n2g_4e9WNZZG" target="_blank" class="border-2 border-gray-300 font-bold text-center px-5 py-3 rounded-md">Preview Dashboard</a>
-</div>
-<p class="text-[12px] mt-4 text-gray-600">✅ Instant Google Sheet Download • ✅ Works on Google Sheets (Free) • ✅ 500+ Ecommerce Sellers Trust</p>
+<div class="inline-flex items-center gap-2 border border-blue-500/30 bg-blue-500/10 text-blue-300 text-xs font-bold px-4 py-2 rounded-full">
+<span class="w-2 h-2 rounded-full bg-blue-400"></span>
+E-COMMERCE BUSINESS MANAGEMENT TOOL
 </div>
 
-<!-- DASHBOARD MOCK - PHOTO JAISA -->
-<div class="bg-[#0f1e3a] rounded-2xl p-3 md:p-4 shadow-2xl">
-<div class="flex items-center gap-2 px-2 pb-3"><span class="w-2.5 h-2.5 bg-red-400 rounded-full"></span><span class="w-2.5 h-2.5 bg-yellow-400 rounded-full"></span><span class="text-green-400 text-xs font-bold border border-green-500 px-2 py-0.5 rounded">E-commerce P&L Dashboard — 2024</span></div>
-<div class="bg-gray-100 rounded-xl p-3">
+<h1 class="text-4xl md:text-6xl font-black leading-tight mt-6">
+Know Your Business.
+<span class="blue">Track Your Profit.</span>
+</h1>
+
+<p class="text-gray-400 text-base md:text-lg leading-relaxed mt-6">
+The Google Sheets E-commerce P&L Tracker helps you organize your sales, Ads Spend, COGS, expenses and business profit in one easy-to-use dashboard.
+</p>
+
+<div class="flex items-center gap-4 mt-7 flex-wrap">
+<span class="text-2xl text-gray-500 line-through font-bold">₹1999</span>
+<span class="text-5xl font-black blue">₹599</span>
+<span class="bg-blue-500/15 border border-blue-500/30 text-blue-300 text-xs font-bold px-3 py-2 rounded-lg">SAVE ₹1400</span>
+</div>
+
+<p class="text-gray-400 text-xs mt-3">
+One-time payment • Instant Download • No Monthly Subscription
+</p>
+
+<div class="flex flex-col sm:flex-row gap-3 mt-8">
+
+<a href="https://www.supercreators.in/p/httpsdrivegooglecomfiled1zozcw3nm9wzme57-fqeakq3bobca95viewu"
+onclick="fbq('track','InitiateCheckout',{value:599,currency:'INR'});"
+class="gradient btn text-white font-bold text-center px-7 py-4 rounded-xl">
+🛒 BUY NOW FOR ₹599
+</a>
+
+<a href="https://docs.google.com/spreadsheets/d/1QiLxA4fIZ5n2g_4e9WNZZG"
+target="_blank" rel="noopener"
+class="border border-blue-500/50 bg-blue-500/10 text-blue-300 font-bold text-center px-7 py-4 rounded-xl btn">
+👁 PREVIEW DASHBOARD
+</a>
+
+</div>
+
+<div class="flex flex-wrap gap-4 mt-7 text-xs text-gray-400">
+<span>✓ Google Sheets</span>
+<span>✓ Easy to Use</span>
+<span>✓ Instant Access</span>
+</div>
+</div>
+
+
+<!-- DASHBOARD MOCKUP -->
+<div class="card glow p-4 md:p-6 relative">
+<div class="flex justify-between items-center mb-5">
+<div>
+<p class="font-bold text-sm">E-commerce Dashboard</p>
+<p class="text-xs text-gray-500 mt-1">Business Performance Overview</p>
+</div>
+<span class="text-[10px] text-blue-300 border border-blue-500/30 rounded-full px-3 py-2">LIVE VIEW</span>
+</div>
+
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-[#080F1E] p-4 rounded-xl border border-white/5">
+<p class="text-gray-400 text-xs">Total Sales</p>
+<p class="text-2xl font-black text-white mt-2">₹1,00,000</p>
+<p class="text-xs text-green-400 mt-2">Business Revenue</p>
+</div>
+
+<div class="bg-[#080F1E] p-4 rounded-xl border border-white/5">
+<p class="text-gray-400 text-xs">Ad Spend</p>
+<p class="text-2xl font-black text-white mt-2">₹20,000</p>
+<p class="text-xs text-blue-400 mt-2">Marketing Cost</p>
+</div>
+
+<div class="bg-[#080F1E] p-4 rounded-xl border border-white/5">
+<p class="text-gray-400 text-xs">Product Cost</p>
+<p class="text-2xl font-black text-white mt-2">₹40,000</p>
+<p class="text-xs text-yellow-400 mt-2">COGS</p>
+</div>
+
+<div class="bg-[#080F1E] p-4 rounded-xl border border-white/5">
+<p class="text-gray-400 text-xs">Other Costs</p>
+<p class="text-2xl font-black text-white mt-2">₹20,000</p>
+<p class="text-xs text-purple-400 mt-2">Expenses</p>
+</div>
+</div>
+
+<div class="bg-[#080F1E] p-5 rounded-xl mt-4 flex items-center justify-between gap-4">
+<div>
+<p class="text-xs text-gray-400">Illustrative Remaining Amount</p>
+<p class="text-3xl font-black text-green-400 mt-2">₹20,000</p>
+<p class="text-[10px] text-gray-500 mt-2">Sample figures for illustration only</p>
+</div>
+<div class="pie"></div>
+</div>
+
+<div class="text-center text-[10px] text-gray-500 mt-4">
+Illustrative dashboard design • Actual tracker preview available above
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- PROBLEM -->
+<section class="py-20 bg-[#0B1425]">
+<div class="max-w-5xl mx-auto px-4 text-center">
+
+<p class="blue font-bold text-xs tracking-[3px]">THE REAL PROBLEM</p>
+
+<h2 class="text-3xl md:text-4xl font-black mt-4">
+Sales Are Not Everything.
+<span class="blue">Profit Matters.</span>
+</h2>
+
+<p class="text-gray-400 max-w-2xl mx-auto mt-5 leading-relaxed">
+Getting orders is exciting. But without organized tracking, it can be difficult to understand how much your business is actually earning after different costs.
+</p>
+
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
+
+<div class="card p-6">
+<div class="text-3xl">📦</div>
+<h3 class="font-bold mt-4">Orders</h3>
+<p class="text-sm text-gray-400 mt-2">Keep your business order data organized.</p>
+</div>
+
+<div class="card p-6">
+<div class="text-3xl">📢</div>
+<h3 class="font-bold mt-4">Ads Spend</h3>
+<p class="text-sm text-gray-400 mt-2">Keep track of advertising expenses.</p>
+</div>
+
+<div class="card p-6">
+<div class="text-3xl">💰</div>
+<h3 class="font-bold mt-4">Business Costs</h3>
+<p class="text-sm text-gray-400 mt-2">Organize product and other expenses.</p>
+</div>
+
+<div class="card p-6">
+<div class="text-3xl">📊</div>
+<h3 class="font-bold mt-4">Profit & Loss</h3>
+<p class="text-sm text-gray-400 mt-2">Get a clearer view of your business numbers.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- FEATURES -->
+<section id="features" class="py-20">
+<div class="max-w-6xl mx-auto px-4">
+
+<div class="text-center">
+<p class="blue font-bold text-xs tracking-[3px]">TRACK YOUR BUSINESS</p>
+<h2 class="text-3xl md:text-4xl font-black mt-4">
+Everything in <span class="blue">One Dashboard</span>
+</h2>
+<p class="text-gray-400 mt-4">Organize important e-commerce business numbers in one place.</p>
+</div>
+
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
+
+<div class="card p-7">
+<div class="text-3xl">📈</div>
+<h3 class="font-bold text-lg mt-5">Sales Tracking</h3>
+<p class="text-gray-400 text-sm mt-3 leading-relaxed">Organize your sales data and monitor business revenue.</p>
+</div>
+
+<div class="card p-7">
+<div class="text-3xl">💸</div>
+<h3 class="font-bold text-lg mt-5">Ads Spend Tracking</h3>
+<p class="text-gray-400 text-sm mt-3 leading-relaxed">Keep your marketing expenses organized.</p>
+</div>
+
+<div class="card p-7">
+<div class="text-3xl">📦</div>
+<h3 class="font-bold text-lg mt-5">COGS Tracking</h3>
+<p class="text-gray-400 text-sm mt-3 leading-relaxed">Keep track of the cost of goods sold.</p>
+</div>
+
+<div class="card p-7">
+<div class="text-3xl">🧾</div>
+<h3 class="font-bold text-lg mt-5">Expense Tracking</h3>
+<p class="text-gray-400 text-sm mt-3 leading-relaxed">Organize your different business expenses.</p>
+</div>
+
+<div class="card p-7">
+<div class="text-3xl">📊</div>
+<h3 class="font-bold text-lg mt-5">Profit & Loss Overview</h3>
+<p class="text-gray-400 text-sm mt-3 leading-relaxed">Understand your business financial performance.</p>
+</div>
+
+<div class="card p-7">
+<div class="text-3xl">⚡</div>
+<h3 class="font-bold text-lg mt-5">Easy Google Sheets Access</h3>
+<p class="text-gray-400 text-sm mt-3 leading-relaxed">Use your tracker with Google Sheets.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- WHAT'S INCLUDED -->
+<section id="included" class="py-20 bg-[#0B1425]">
+<div class="max-w-5xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+
+<div>
+<p class="blue text-xs font-bold tracking-[3px]">YOUR DIGITAL PRODUCT</p>
+<h2 class="text-3xl md:text-4xl font-black mt-4">
+What You Get With <span class="blue">Your Purchase</span>
+</h2>
+<p class="text-gray-400 mt-5 leading-relaxed">
+A Google Sheets-based e-commerce P&L tracker designed to help you organize important business numbers.
+</p>
+</div>
+
+<div class="card p-7 md:p-9">
+<h3 class="font-bold text-xl mb-6">Your Tracker Includes</h3>
+
+<div class="space-y-5 text-sm text-gray-300">
+<p>✓ Google Sheets E-commerce P&L Tracker</p>
+<p>✓ Sales and Revenue Tracking</p>
+<p>✓ Ads Spend Tracking</p>
+<p>✓ COGS and Expense Tracking</p>
+<p>✓ Profit & Loss Dashboard</p>
+<p>✓ Digital Access</p>
+</div>
+
+<a href="https://docs.google.com/spreadsheets/d/1QiLxA4fIZ5n2g_4e9WNZZG"
+target="_blank" rel="noopener"
+class="block text-center border border-blue-500/40 text-blue-300 rounded-xl py-4 mt-8 font-bold btn">
+VIEW DASHBOARD PREVIEW →
+</a>
+</div>
+
+</div>
+</section>
+
+
+<!-- HOW IT WORKS -->
+<section id="how" class="py-20">
+<div class="max-w-6xl mx-auto px-4 text-center">
+
+<p class="blue text-xs font-bold tracking-[3px]">SIMPLE PROCESS</p>
+<h2 class="text-3xl md:text-4xl font-black mt-4">
+How It <span class="blue">Works</span>
+</h2>
+
+<div class="grid md:grid-cols-3 gap-6 mt-12">
+
+<div class="card p-8">
+<div class="w-14 h-14 gradient rounded-2xl flex items-center justify-center text-2xl font-black mx-auto">1</div>
+<h3 class="font-bold text-lg mt-6">Purchase</h3>
+<p class="text-gray-400 text-sm mt-3">Complete your one-time payment securely.</p>
+</div>
+
+<div class="card p-8">
+<div class="w-14 h-14 gradient rounded-2xl flex items-center justify-center text-2xl font-black mx-auto">2</div>
+<h3 class="font-bold text-lg mt-6">Get Access</h3>
+<p class="text-gray-400 text-sm mt-3">Get access to your digital tracker after purchase.</p>
+</div>
+
+<div class="card p-8">
+<div class="w-14 h-14 gradient rounded-2xl flex items-center justify-center text-2xl font-black mx-auto">3</div>
+<h3 class="font-bold text-lg mt-6">Track Your Business</h3>
+<p class="text-gray-400 text-sm mt-3">Enter your business data and organize your numbers.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- WHY THIS TRACKER -->
+<section id="reviews" class="py-20 bg-[#0B1425]">
+<div class="max-w-5xl mx-auto px-4 text-center">
+
+<p class="blue text-xs font-bold tracking-[3px]">MADE FOR E-COMMERCE SELLERS</p>
+<h2 class="text-3xl md:text-4xl font-black mt-4">
+Make Business Numbers <span class="blue">Easier to Understand</span>
+</h2>
+
+<p class="text-gray-400 max-w-2xl mx-auto mt-5 leading-relaxed">
+Your business deserves organized data. Keep sales, advertising costs and other expenses together instead of managing everything across different places.
+</p>
+
+<div class="grid sm:grid-cols-3 gap-5 mt-10">
+<div class="card p-6">
+<p class="text-3xl">🎯</p>
+<h3 class="font-bold mt-4">Better Visibility</h3>
+<p class="text-gray-400 text-sm mt-2">See important business numbers together.</p>
+</div>
+<div class="card p-6">
+<p class="text-3xl">⏱️</p>
+<h3 class="font-bold mt-4">Organized Tracking</h3>
+<p class="text-gray-400 text-sm mt-2">Keep business records in one place.</p>
+</div>
+<div class="card p-6">
+<p class="text-3xl">📊</p>
+<h3 class="font-bold mt-4">Clearer Decisions</h3>
+<p class="text-gray-400 text-sm mt-2">Use your business data to understand performance.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- PRICING -->
+<section class="py-20">
+<div class="max-w-3xl mx-auto px-4 text-center">
+
+<p class="blue font-bold text-xs tracking-[3px]">GET STARTED TODAY</p>
+<h2 class="text-3xl md:text-4xl font-black mt-4">
+Take Control of Your <span class="blue">Business Numbers</span>
+</h2>
+
+<div class="card glow p-8 md:p-12 mt-10">
+<p class="text-gray-400 font-bold">E-COMMERCE P&L TRACKER</p>
+<p class="text-gray-500 line-through text-xl font-bold mt-5">₹1999</p>
+<p class="text-6xl font-black blue mt-2">₹599</p>
+<p class="text-sm text-green-400 font-bold mt-3">Save ₹1400</p>
+
+<div class="border-t border-white/10 mt-8 pt-7 space-y-4 text-sm text-gray-300 text-left max-w-sm mx-auto">
+<p>✓ One-time payment</p>
+<p>✓ Digital Google Sheets Tracker</p>
+<p>✓ Instant Download after purchase</p>
+<p>✓ No Monthly Subscription</p>
+</div>
+
+<a href="https://www.supercreators.in/p/httpsdrivegooglecomfiled1zozcw3nm9wzme57-fqeakq3bobca95viewu"
+onclick="fbq('track','InitiateCheckout',{value:599,currency:'INR'});"
+class="block gradient btn text-white text-center font-extrabold text-lg px-8 py-5 rounded-xl mt-9">
+BUY NOW FOR ₹599 🔒
+</a>
+
+<p class="text-xs text-gray-500 mt-5">Secure checkout • Digital product</p>
+</div>
+</div>
+</section>
+
+
+<!-- FAQ -->
+<section id="faq" class="py-20 bg-[#0B1425]">
+<div class="max-w-3xl mx-auto px-4">
+
+<div class="text-center mb-12">
+<p class="blue text-xs font-bold tracking-[3px]">NEED HELP?</p>
+<h2 class="text-3xl md:text-4xl font-black mt-4">Frequently Asked <span class="blue">Questions</span></h2>
+</div>
+
+<div class="space-y-4">
+
+<details class="card p-5">
+<summary class="font-bold cursor-pointer">What is this E-commerce P&L Tracker?</summary>
+<p class="text-gray-400 text-sm mt-4 leading-relaxed">It is a Google Sheets-based tracker designed to help e-commerce sellers organize sales, advertising spend, product costs, expenses and profit & loss information.</p>
+</details>
+
+<details class="card p-5">
+<summary class="font-bold cursor-pointer">Do I need paid Google Sheets?</summary>
+<p class="text-gray-400 text-sm mt-4 leading-relaxed">No. Google Sheets can be used with a free Google account.</p>
+</details>
+
+<details class="card p-5">
+<summary class="font-bold cursor-pointer">How will I get my product?</summary>
+<p class="text-gray-400 text-sm mt-4 leading-relaxed">After completing your purchase, follow the access or download instructions provided at checkout.</p>
+</details>
+
+<details class="card p-5">
+<summary class="font-bold cursor-pointer">Is this a monthly subscription?</summary>
+<p class="text-gray-400 text-sm mt-4 leading-relaxed">No. The listed price is a one-time payment of ₹599.</p>
+</details>
+
+<details class="card p-5">
+<summary class="font-bold cursor-pointer">Can I preview the dashboard before buying?</summary>
+<p class="text-gray-400 text-sm mt-4 leading-relaxed">Yes. Click the Preview Dashboard button to open the Google Sheets preview directly.</p>
+</details>
+
+</div>
+</div>
+</section>
+
+
+<!-- FINAL CTA -->
+<section class="py-16 grid-bg">
+<div class="max-w-4xl mx-auto px-4 text-center">
+<h2 class="text-3xl md:text-5xl font-black">
+Your Business Data.
+<span class="blue">One Dashboard.</span>
+</h2>
+<p class="text-gray-400 mt-5">Start organizing your e-commerce business numbers today.</p>
+
+<a href="https://www.supercreators.in/p/httpsdrivegooglecomfiled1zozcw3nm9wzme57-fqeakq3bobca95viewu"
+onclick="fbq('track','InitiateCheckout',{value:599,currency:'INR'});"
+class="inline-block gradient btn text-white font-extrabold px-10 py-5 rounded-xl mt-8">
+GET YOUR TRACKER – ₹599
+</a>
+</div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="border-t border-white/10 py-8 bg-[#050A13]">
+<div class="max-w-6xl mx-auto px-4 text-center">
+<p class="font-extrabold text-lg">Digital Commerce<span class="blue">.lab</span></p>
+<p class="text-xs text-gray-500 mt-2">Smart Tools for Smarter Business.</p>
+<p class="text-xs text-gray-600 mt-5">© 2026 Digital Commerce.lab. All rights reserved.</p>
+</div>
+</footer>
+
+</body>
+</html>
 
